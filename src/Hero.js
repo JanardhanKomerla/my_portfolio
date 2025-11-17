@@ -15,8 +15,8 @@ const Hero = () => {
   
   const downloadResume = () => {
   const link = document.createElement("a");
-  link.href = process.env.PUBLIC_URL + "/Janardhan_Resume.pdf";
-  link.download = "Janardhan_Resume.pdf";
+  link.href = process.env.PUBLIC_URL + "/resume/janardhan_Resume.pdf";
+  link.download = "janardhan_Resume.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
