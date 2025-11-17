@@ -12,15 +12,25 @@ const Hero = () => {
     document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   };
 
+  // Force download resume (works on all mobile devices)
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/Janardhan_Resume.pdf"; // Make sure this file is inside public/
+    link.setAttribute("download", "Janardhan_Resume.pdf");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="hero">
       <div className="hero-content">
+
         <button className="welcome-btn">Welcome to my Portfolio</button>
 
         <h1 className="name-text">Janardhan Komerla</h1>
 
         <h2 className="role">Java Full Stack Web Developer</h2>
-
 
         <div className="btn-group">
           <button className="primary-btn" onClick={goToProjects}>
@@ -31,9 +41,9 @@ const Hero = () => {
             Get In Touch
           </button>
 
-          <a
-            href="/Janardhan_Resume.pdf"
-            download
+          {/* Fixed Resume Download Button */}
+          <button
+            onClick={downloadResume}
             className="resume-btn"
             style={{
               padding: "12px 25px",
@@ -46,21 +56,35 @@ const Hero = () => {
             }}
           >
             Download Resume
-          </a>
+          </button>
         </div>
 
         <div className="social-icons">
-          <a href="https://github.com/janardhankomerla" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/janardhan-komerla-721296277/" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-linkedin"></i>
-          </a>
-          <a href="https://www.instagram.com/_janardhan_komerla_?igsh=MWFzYmJ6b240cWt0Ng==" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-instagram"></i>
+          <a
+            href="https://github.com/janardhankomerla"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-github"></i>
           </a>
 
+          <a
+            href="https://www.linkedin.com/in/janardhan-komerla-721296277/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-linkedin"></i>
+          </a>
+
+          <a
+            href="https://www.instagram.com/_janardhan_komerla_?igsh=MWFzYmJ6b240cWt0Ng=="
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-instagram"></i>
+          </a>
         </div>
+
       </div>
     </section>
   );
