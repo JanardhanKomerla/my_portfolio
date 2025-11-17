@@ -41,7 +41,7 @@ const Hero = () => {
             Get In Touch
           </button>
 
-          {/* Fixed Resume Download Button */}
+          
           <button
             onClick={downloadResume}
             className="resume-btn"
