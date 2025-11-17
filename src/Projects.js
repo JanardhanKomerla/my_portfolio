@@ -4,6 +4,7 @@ import expense_tracker from "./assets/images/expense-tracker.jpg";
 import quiz from "./assets/images/quiz.jpg";
 import student_management from "./assets/images/student_management.jpg";
 import spam_sms from "./assets/images/spam_sms.webp"
+import port from "./assets/images/portfo.jpg"
 
 const projects = [
   {
@@ -37,6 +38,14 @@ const projects = [
     tags: ["Python", "CSS", "HTML"],
     demo: "https://github.com/JanardhanKomerla/Spam_SMS_Detection",
     code: "https://github.com/JanardhanKomerla/Spam_SMS_Detection",
+  },
+  {
+  title: "My_Portfolio",
+    desc: "A personal portfolio",
+    image: port,
+    tags: ["React","JavaScript", "CSS", "HTML"],
+    demo: "https://janardhankomerla.github.io/my_portfolio/",
+    code: "https://github.com/JanardhanKomerla/my_portfolio",
   },
 ];
 
