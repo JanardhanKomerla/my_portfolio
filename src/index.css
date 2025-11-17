@@ -1,13 +1,268 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+/* LIGHT THEME VALUES */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --card-bg: #ffffff;
+  --card-border: rgba(0,0,0,0.12);
+  --nav-bg: rgba(255, 255, 255, 0.65);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* DARK THEME */
+[data-theme="dark"] {
+  --text-color: #f1f1f1;
+  --background-color: #0b0b0b;
+  --section-bg: transparent;   /* IMPORTANT: keeps cursor visible */
+  --card-bg: #181818;
+  --card-border: rgba(255,255,255,0.15);
+  --nav-bg: rgba(0,0,0,0.55);
+}
+
+/* APPLY TO BODY */
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  transition: 0.3s ease-in-out;
+}
+
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* cursor effect always on top */
+.cursor-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* =========================
+     PROJECT SECTION THEME
+   ========================= */
+
+/* Whole project section background */
+#projects {
+  background: var(--section-bg); /* transparent for cursor effect */
+  color: var(--text-color);
+}
+
+/* Project card box */
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+/* Project title */
+.project-card h3 {
+  color: var(--text-color);
+}
+
+/* Project description */
+.project-card p {
+  color: var(--text-color);
+}
+
+/* Buttons in projects */
+.project-card button,
+.project-btn {
+  background: #00c8ff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.project-card button:hover,
+.project-btn:hover {
+  background: #0091cc;
+  transform: translateY(-3px);
+}
+
+/* Hover effect for both light and dark mode */
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* For dark mode specifically (optional override) */
+[data-theme="dark"] .project-card:hover {
+  box-shadow: 0 12px 30px rgba(255,255,255,0.07);
+}
+/* =========================
+      SKILLS SECTION THEME
+   ========================= */
+
+#skills {
+  background: var(--section-bg); /* transparent to show cursor */
+  color: var(--text-color);
+  transition: 0.3s ease-in-out;
+}
+
+/* Skill item/card */
+.skill-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 18px 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s ease;
+  color: var(--text-color);
+}
+
+/* Icon styling */
+.skill-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 0px transparent);
+  transition: 0.3s ease;
+}
+
+/* Skill name */
+.skill-item h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+/* Hover effect */
+.skill-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* SPECIAL dark mode hover glow */
+[data-theme="dark"] .skill-item:hover {
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.25);
+}
+
+/* Dark mode icon brightness fix */
+[data-theme="dark"] .skill-item img {
+  filter: brightness(1.2);
+}
+/* =========================
+      CONTACT SECTION THEME
+   ========================= */
+
+#contact,
+.contact-section {
+  background: var(--section-bg); /* transparent so cursor effect shows */
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+/* Contact container */
+.contact-box {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 25px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  transition: 0.3s ease;
+}
+
+/* INPUT FIELDS */
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 12px;
+  border-radius: 8px;
+
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--card-border);
+
+  font-size: 16px;
+  transition: 0.25s ease;
+}
+
+/* FOCUS EFFECT */
+.contact-section input:focus,
+.contact-section textarea:focus {
+  border-color: #00c8ff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.5);
+}
+
+/* SEND BUTTON */
+.contact-section button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px 20px;
+  background: #00c8ff;
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.contact-section button:hover {
+  background: #0095cc;
+  transform: translateY(-2px);
+}
+
+/* DARK MODE hover glow */
+[data-theme="dark"] .contact-section button:hover {
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.4);
+}
+/* =========================
+           FOOTER
+   ========================= */
+
+footer {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-top: 1px solid var(--card-border);
+
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+/* footer links */
+footer a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #00c8ff;
+}
+
+
+
+/* --- global fixes --- */
+html, body, #root {
+  width: 100%;
+  overflow-x: hidden; 
+}
+html {
+  scroll-behavior: smooth !important;
+}
+/* Ensure cursor canvas stays behind everything (if you use it) */
+.cursor-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none;
+  z-index: -2 !important;
 }

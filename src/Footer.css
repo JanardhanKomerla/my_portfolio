@@ -1,0 +1,41 @@
+.footer {
+  padding: 10px 10px;              /* reduced height */
+  text-align: center;
+
+  background: var(--card-bg);
+  border-top: 1px solid var(--card-border);
+  margin-top: 40px;                /* slightly smaller gap */
+
+  transition: 0.3s ease;
+}
+
+.footer p {
+  font-size: 14px;
+  margin-bottom: 6px;              /* reduce gap between text & icons */
+  color: var(--text-color);
+}
+
+/* icon row */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;                       /* reduce space between icons */
+  font-size: 20px;                 /* smaller icons */
+  margin-top: 4px;                 /* reduce vertical space */
+}
+
+/* icon color */
+.footer-icons a {
+  color: #00c8ff;
+  transition: 0.2s ease;
+}
+
+.footer-icons a:hover {
+  color: #00a9d6;
+  transform: scale(1.12);
+}
+
+/* brighten icons in dark mode */
+[data-theme="dark"] .footer-icons a {
+  filter: brightness(1.2);
+}

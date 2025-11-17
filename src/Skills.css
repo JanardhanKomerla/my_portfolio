@@ -1,0 +1,117 @@
+/* ===========================
+      SKILLS SECTION
+   =========================== */
+.skills-section {
+  width: 100%;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  margin-top: 60px;
+
+  background: var(--section-bg);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+/* Title */
+.skills-title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+/* Subtitle */
+.skills-subtitle {
+  text-align: left;
+  font-size: 24px;
+  margin: 30px 0 15px;
+  font-weight: 600;
+  color: #00bcd4;
+}
+
+/* Tools subtitle */
+.tools-subtitle {
+  margin-top: 50px;
+  color: #ff9800;
+}
+
+/* ===========================
+      GRID
+   =========================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===========================
+      SKILL CARD
+   =========================== */
+.skill-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--card-border);
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform .3s ease, box-shadow .3s ease, background 0.3s;
+}
+
+/* Hover Glow */
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 14px 30px rgba(0, 180, 255, 0.45);
+}
+
+[data-theme="dark"] .skill-card:hover {
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+}
+
+/* ===========================
+      ICONS
+   =========================== */
+.skill-logo {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 12px;
+  transition: 0.3s;
+}
+
+/* Slightly brighten all icons in dark */
+[data-theme="dark"] .skill-logo {
+  filter: brightness(1.25);
+}
+
+/* GitHub icon FIX for dark theme */
+[data-theme="dark"] .github-logo {
+  filter: invert(1) brightness(2);
+}
+
+/* Skill Name */
+.skill-card p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* ===========================
+      RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+  .skill-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .skills-title {
+    font-size: 32px;
+  }
+
+  .skills-subtitle {
+    font-size: 20px;
+  }
+}

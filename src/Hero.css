@@ -1,0 +1,137 @@
+
+/* PERFECTLY CENTERED HERO */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  justify-content: center;     
+  align-items: center;         
+  flex-direction: column;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Center the inner content */
+.hero-content {
+  width: 100%;
+  max-width: 950px;
+  text-align: center;
+  margin: 0 auto;             
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;         
+}
+
+/* Welcome Button */
+.welcome-btn {
+  padding: 10px 25px;
+  border-radius: 25px;
+  background: transparent;
+  border: 2px solid #00bcd4;
+  color: #00bcd4;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Gradient Name */
+.name-text {
+  margin: 10px 0; 
+  font-size: 80px;
+  font-weight: 800;
+
+  background: linear-gradient(90deg, #00c6ff, #0072ff, #28e7ff, #73ffd5);
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+  0%, 100% {
+    filter: brightness(1);
+    text-shadow: 0px 0px 10px rgba(255,255,255,0.1);
+  }
+  50% {
+    filter: brightness(1.6);
+    text-shadow: 0px 0px 25px rgba(255,255,255,0.45);
+  }
+}
+
+/* Role */
+.role {
+  font-size: 32px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+/* Description */
+.desc {
+  font-size: 18px;
+  margin-top: 14px;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+/* Buttons Container */
+.btn-group {
+  margin-top: 30px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Buttons */
+.primary-btn {
+  padding: 12px 25px;
+  background: #00bcd4;
+  color: white;
+  font-size: 17px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.outline-btn {
+  padding: 12px 25px;
+  background: transparent;
+  border: 2px solid #00bcd4;
+  font-size: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #00bcd4;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 45px;
+  display: flex;
+  gap: 35px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  color: #00bcd4;
+  transition: 0.3s;
+}
+
+
+@media (max-width: 768px) {
+  .name-text {
+    font-size: 52px;
+  }
+  .role {
+    font-size: 26px;
+  }
+  .desc {
+    font-size: 16px;
+  }
+  .btn-group {
+    flex-direction: column;
+  }
+}
