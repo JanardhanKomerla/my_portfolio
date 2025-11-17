@@ -12,15 +12,15 @@ const Hero = () => {
     document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   };
 
-  // Force download resume (works on all mobile devices)
+  
   const downloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/Janardhan_Resume.pdf"; // Make sure this file is inside public/
-    link.setAttribute("download", "Janardhan_Resume.pdf");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const link = document.createElement("a");
+  link.href = process.env.PUBLIC_URL + "/Janardhan_Resume.pdf";
+  link.download = "Janardhan_Resume.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   return (
     <section className="hero">
